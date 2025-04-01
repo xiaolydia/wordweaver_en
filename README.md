@@ -1,51 +1,51 @@
-# 词汇织者 - 填字游戏世界
+# WordWeaver - Crossword Puzzle World
 
-词汇织者是一个充满创意的填字游戏平台，致力于创造兼具趣味性和挑战性的文字谜题。每个谜题都经过精心设计，结合了独特的故事背景和填字游戏，通过填写正确的答案来揭开故事的真相。
+WordWeaver is a creative crossword puzzle platform dedicated to creating word puzzles that are both fun and challenging. Each puzzle is carefully designed, combining unique story backgrounds with crossword gameplay. Solve the puzzles correctly to uncover the truth behind the stories.
 
-## 游戏列表
+## Game List
 
-### 1. 艺术品窃贼游戏之谜
-- **难度**: ★★★☆☆
-- **类型**: 推理
-- **简介**: 追踪一位神秘的国际艺术品盗窃专家，解开他的身份与行踪之谜。
-- **特色**: 结合艺术品盗窃案件，考验玩家的推理能力和词汇量。
+### 1. Art Thief Mystery
+- **Difficulty**: ★★★☆☆
+- **Type**: Mystery
+- **Description**: Track a mysterious international art thief and uncover their identity and whereabouts.
+- **Feature**: Combines art theft cases, testing players' reasoning abilities and vocabulary.
 
-### 2. 古堡的秘密
-- **难度**: ★★★★☆
-- **类型**: 奇幻
-- **简介**: 探索一座古老城堡隐藏的秘密，解开世代相传的古老谜题。
-- **特色**: 融入奇幻元素，玩家需要解开与古堡历史相关的谜题。
+### 2. Castle Secrets
+- **Difficulty**: ★★★★☆
+- **Type**: Fantasy
+- **Description**: Explore the hidden secrets of an ancient castle and solve age-old riddles passed down through generations.
+- **Feature**: Incorporates fantasy elements, requiring players to solve puzzles related to the castle's history.
 
-### 3. 星际谜云
-- **难度**: ★★★★★
-- **类型**: 科幻
-- **简介**: 在未来世界中解开一个关乎人类命运的星际谜题。
-- **特色**: 结合科幻元素，玩家需要解决与未来科技相关的谜题。
+### 3. Cosmic Enigma
+- **Difficulty**: ★★★★★
+- **Type**: Sci-Fi
+- **Description**: Solve an interstellar puzzle that holds the fate of humanity in a futuristic world.
+- **Feature**: Blends sci-fi elements, challenging players to solve puzzles related to future technology.
 
-## 技术栈
+## Tech Stack
 
-- **HTML5 + CSS3**: 用于构建网站结构和样式。
-- **Tailwind CSS**: 用于快速构建响应式UI。
-- **Font Awesome**: 提供丰富的图标支持。
-- **Google Fonts**: 提供游戏风格的字体。
-- **JavaScript**: 用于实现游戏逻辑和交互。
+- **HTML5 + CSS3**: Used for website structure and styling.
+- **Tailwind CSS**: For rapidly building responsive UI.
+- **Font Awesome**: Provides rich icon support.
+- **Google Fonts**: Supplies game-style fonts.
+- **JavaScript**: Implements game logic and interactions.
 
-## 游戏特色
+## Game Features
 
-- **烧脑挑战**: 精心设计的填字谜题，考验玩家的词汇量和逻辑思维能力。
-- **精彩故事**: 每个谜题都伴随着引人入胜的背景故事，解谜的同时享受阅读乐趣。
-- **沉浸体验**: 精美的视觉设计和互动效果，带来沉浸式的解谜游戏体验。
+- **Brain Teasers**: Carefully designed crossword puzzles that test your vocabulary and logical thinking abilities.
+- **Engaging Stories**: Each puzzle comes with a captivating background story, combining the joy of reading with puzzle-solving.
+- **Immersive Experience**: Beautiful visual design and interactive effects provide an immersive puzzle-solving experience.
 
-## 未来计划
+## Future Plans
 
-- **新游戏开发**: 计划推出更多主题的填字游戏，丰富游戏内容。
-- **用户反馈**: 收集用户反馈，持续优化游戏体验。
-- **社区建设**: 建立玩家社区，促进玩家之间的互动和交流。
+- **New Game Development**: Planning to launch more themed crossword games to enrich content.
+- **User Feedback**: Collecting user feedback to continuously optimize game experience.
+- **Community Building**: Establishing player communities to facilitate interaction and communication among players.
 
-## 贡献
+## Contributions
 
-欢迎对词汇织者进行贡献！无论是提出建议、报告问题，还是提交代码，我们都非常欢迎。
+Contributions to WordWeaver are welcome! Whether it's making suggestions, reporting issues, or submitting code, we appreciate all forms of contribution.
 
-## 版权
+## Copyright
 
-&copy; 2025 词汇织者 - 所有权利保留 
+&copy; 2025 WordWeaver - All Rights Reserved 
