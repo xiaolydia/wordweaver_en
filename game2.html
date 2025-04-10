@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P2GJN955EG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-P2GJN955EG');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Castle Secrets - Crossword Puzzle</title>
@@ -38,6 +47,61 @@
         .grid-cell-black {
             background-color: #000;
             border: none;
+        }
+        
+        /* Celebration animation styles */
+        @keyframes celebrate {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        @keyframes confetti {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        
+        .celebrating {
+            animation: celebrate 0.5s ease-in-out;
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: var(--color);
+            opacity: 0.8;
+            animation: confetti var(--duration) linear var(--delay) infinite;
+            z-index: 100;
+        }
+        
+        .celebration-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .celebration-modal {
+            background: linear-gradient(135deg, #5D13E7, #FF3366);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            max-width: 90%;
+            width: 400px;
         }
     </style>
 </head>
@@ -89,7 +153,7 @@
                 <div class="bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-6 border border-accent/20">
                     <h2 class="text-xl font-game text-accent mb-4">Crossword Grid</h2>
                     <div class="flex justify-center">
-                        <div class="grid grid-cols-6 gap-1">
+                        <div class="grid grid-cols-8 gap-1">
                             <!-- Row 1 -->
                             <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
                                 <span class="absolute top-0.5 left-1 text-xs font-bold text-accent">1→</span>
@@ -107,9 +171,13 @@
                             </div>
                             <div class="w-12 h-12 grid-cell grid-cell-black"></div>
                             <div class="w-12 h-12 grid-cell grid-cell-black"></div>
+                            <div class="w-12 h-12 grid-cell grid-cell-black"></div>
+                            <div class="w-12 h-12 grid-cell grid-cell-black"></div>
 
                             <!-- Row 2 -->
-                            <div class="w-12 h-12 grid-cell grid-cell-black"></div>
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="2-1" data-answer="P">
+                            </div>
                             <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
                                 <span class="absolute top-0.5 left-1 text-xs font-bold text-accent">2→</span>
                                 <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="2-2" data-answer="P">
@@ -125,6 +193,12 @@
                             </div>
                             <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
                                 <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="2-6" data-answer="R">
+                            </div>
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="2-7" data-answer="A">
+                            </div>
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="2-8" data-answer="I">
                             </div>
 
                             <!-- Row 3 -->
@@ -147,6 +221,12 @@
                             <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
                                 <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="3-6" data-answer="L">
                             </div>
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="3-7" data-answer="A">
+                            </div>
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="3-8" data-answer="C">
+                            </div>
 
                             <!-- Row 4 -->
                             <div class="w-12 h-12 grid-cell grid-cell-black"></div>
@@ -164,6 +244,12 @@
                             </div>
                             <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
                                 <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="4-6" data-answer="D">
+                            </div>
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="4-7" data-answer="R">
+                            </div>
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="4-8" data-answer="O">
                             </div>
 
                             <!-- Row 5 -->
@@ -183,6 +269,11 @@
                                 <span class="absolute top-0.5 left-1 text-xs font-bold text-accent">D↓</span>
                                 <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="5-6" data-answer="S">
                             </div>
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <span class="absolute top-0.5 left-1 text-xs font-bold text-accent">C↓</span>
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="5-7" data-answer="T">
+                            </div>
+                            <div class="w-12 h-12 grid-cell grid-cell-black"></div>
 
                             <!-- Row 6 -->
                             <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
@@ -204,6 +295,48 @@
                             <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
                                 <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="6-6" data-answer="E">
                             </div>
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="6-7" data-answer="R">
+                            </div>
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="6-8" data-answer="E">
+                            </div>
+                            
+                            <!-- Row 7 -->
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="7-1" data-answer="L">
+                            </div>
+                            <div class="w-12 h-12 grid-cell grid-cell-black"></div>
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="7-3" data-answer="C">
+                            </div>
+                            <div class="w-12 h-12 grid-cell grid-cell-black"></div>
+                            <div class="w-12 h-12 grid-cell grid-cell-black"></div>
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="7-6" data-answer="C">
+                            </div>
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="7-7" data-answer="E">
+                            </div>
+                            <div class="w-12 h-12 grid-cell grid-cell-black"></div>
+                            
+                            <!-- Row 8 -->
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="8-1" data-answer="L">
+                            </div>
+                            <div class="w-12 h-12 grid-cell grid-cell-black"></div>
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="8-3" data-answer="I">
+                            </div>
+                            <div class="w-12 h-12 grid-cell grid-cell-black"></div>
+                            <div class="w-12 h-12 grid-cell grid-cell-black"></div>
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="8-6" data-answer="R">
+                            </div>
+                            <div class="w-12 h-12 border border-accent/30 flex items-center justify-center relative bg-white/5 grid-cell rounded-sm">
+                                <input type="text" maxlength="1" class="w-8 h-8 text-center uppercase text-light font-bold bg-transparent focus:outline-none focus:ring-2 focus:ring-accent rounded" data-cell="8-7" data-answer="A">
+                            </div>
+                            <div class="w-12 h-12 grid-cell grid-cell-black"></div>
                         </div>
                     </div>
                     
@@ -316,6 +449,58 @@
             'E': 'CELLAR'
         };
 
+        // Create confetti element
+        function createConfetti() {
+            const colors = ['#FF3366', '#5D13E7', '#00FFCC', '#FFCC00', '#FF66CC'];
+            const confettiCount = 200;
+            
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.setProperty('--color', colors[Math.floor(Math.random() * colors.length)]);
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.setProperty('--duration', Math.random() * 3 + 2 + 's');
+                confetti.style.setProperty('--delay', Math.random() * 2 + 's');
+                document.body.appendChild(confetti);
+            }
+            
+            // Remove confetti after animation completes
+            setTimeout(() => {
+                const confettis = document.querySelectorAll('.confetti');
+                confettis.forEach(c => c.remove());
+            }, 8000);
+        }
+        
+        // Show celebration modal
+        function showCelebrationModal() {
+            const overlay = document.createElement('div');
+            overlay.className = 'celebration-overlay';
+            
+            const modal = document.createElement('div');
+            modal.className = 'celebration-modal';
+            
+            const title = document.createElement('h2');
+            title.className = 'text-3xl font-game text-light mb-4';
+            title.textContent = 'Congratulations!';
+            
+            const message = document.createElement('p');
+            message.className = 'text-lg text-light/90 mb-6';
+            message.textContent = 'You successfully solved the Castle Secrets puzzle!';
+            
+            const button = document.createElement('button');
+            button.className = 'bg-accent hover:bg-accent/80 text-dark px-6 py-3 rounded-lg transition-colors font-bold';
+            button.textContent = 'Continue Adventure';
+            button.addEventListener('click', () => {
+                overlay.remove();
+            });
+            
+            modal.appendChild(title);
+            modal.appendChild(message);
+            modal.appendChild(button);
+            overlay.appendChild(modal);
+            document.body.appendChild(overlay);
+        }
+
         // Check answers
         document.getElementById('check-answers').addEventListener('click', function() {
             let allCorrect = true;
@@ -336,7 +521,18 @@
             });
             
             if (allCorrect && inputs.length > 0) {
-                alert('Congratulations! All answers are correct!');
+                // Add celebration effects
+                document.querySelectorAll('.grid-cell').forEach(cell => {
+                    cell.classList.add('celebrating');
+                });
+                
+                // Create confetti effect
+                createConfetti();
+                
+                // Show celebration modal after a short delay
+                setTimeout(() => {
+                    showCelebrationModal();
+                }, 800);
             }
         });
 
@@ -361,13 +557,18 @@
             });
             
             document.getElementById('answers').classList.add('hidden');
-        });
-
-        // Set current date
-        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
+            
+            // Remove celebration effects if any
+            document.querySelectorAll('.grid-cell').forEach(cell => {
+                cell.classList.remove('celebrating');
+            });
+            
+            // Remove any confetti
+            document.querySelectorAll('.confetti').forEach(c => c.remove());
+            
+            // Remove celebration modal if exists
+            const overlay = document.querySelector('.celebration-overlay');
+            if (overlay) overlay.remove();
         });
         
         // Add keyboard navigation
